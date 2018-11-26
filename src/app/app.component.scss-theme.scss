@@ -49,6 +49,13 @@
         }
       }
     }
+
+    .aw-card {
+      color: mat-color($primary, lighter);
+      background-color: mat-color($primary);
+      border-radius: 0;
+      padding: 28px 16px;
+    }
   }
 
   .error-notification-overlay {

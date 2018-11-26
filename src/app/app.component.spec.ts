@@ -4,11 +4,12 @@ import { TestingModule } from '@testing/utils';
 import { CoreModule } from '@app/core';
 
 import { AppComponent } from './app.component';
+import { AwAppModule } from './aw-app';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [CoreModule, TestingModule],
+      imports: [CoreModule, AwAppModule, TestingModule],
       declarations: [AppComponent]
     }).compileComponents();
   }));

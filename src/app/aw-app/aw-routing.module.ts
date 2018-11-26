@@ -3,16 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthGuardService } from '@app/core';
 
-//import { UsersComponent } from './users/users.component';
 import { AboutComponent } from './about/about.component';
 import { FeaturesComponent } from './features/features.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  // {
-  //     path: 'users',
-  //     component: UsersComponent,
-  //     data: { title: 'aw.menu.users' }
-  // },
+  {
+    path: 'users',
+    component: UsersComponent,
+    data: { title: 'aw.menu.users' }
+  },
   {
     path: 'about',
     component: AboutComponent,
