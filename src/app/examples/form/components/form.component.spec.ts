@@ -20,15 +20,12 @@ describe('FormComponent', () => {
   let dispatchSpy: jasmine.Spy;
 
   beforeEach(async () => {
-    component = await createComponent<FormComponent>(
-      '<anms-form></anms-form>',
-      {
-        declarations: [FormComponent],
-        imports: [TestingModule],
-        providers: [NotificationService],
-        detectChanges: false
-      }
-    );
+    component = await createComponent<FormComponent>('<aw-form></aw-form>', {
+      declarations: [FormComponent],
+      imports: [TestingModule],
+      providers: [NotificationService],
+      detectChanges: false
+    });
 
     store = TestBed.get(Store);
     store.setState(createState(initialState));
@@ -38,48 +35,33 @@ describe('FormComponent', () => {
   });
 
   it('should submit when form is valid', async () => {
-    component.input(
-      component.getByLabelText('anms.examples.form.placeholder1'),
-      {
-        target: {
-          value: '@tim_deschryver'
-        }
+    component.input(component.getByLabelText('aw.examples.form.placeholder1'), {
+      target: {
+        value: '@tim_deschryver'
       }
-    );
-    component.input(
-      component.getByLabelText('anms.examples.form.placeholder2'),
-      {
-        target: {
-          value: 'mysuperawesomeandsecurepassword'
-        }
+    });
+    component.input(component.getByLabelText('aw.examples.form.placeholder2'), {
+      target: {
+        value: 'mysuperawesomeandsecurepassword'
       }
-    );
-    component.input(
-      component.getByLabelText('anms.examples.form.placeholder3'),
-      {
-        target: {
-          value: 'foo@bar.baz'
-        }
+    });
+    component.input(component.getByLabelText('aw.examples.form.placeholder3'), {
+      target: {
+        value: 'foo@bar.baz'
       }
-    );
-    component.input(
-      component.getByLabelText('anms.examples.form.placeholder5'),
-      {
-        target: {
-          value: '1991-12-31'
-        }
+    });
+    component.input(component.getByLabelText('aw.examples.form.placeholder5'), {
+      target: {
+        value: '1991-12-31'
       }
-    );
-    component.input(
-      component.getByLabelText('anms.examples.form.placeholder4'),
-      {
-        target: {
-          value: 'no description needed here'
-        }
+    });
+    component.input(component.getByLabelText('aw.examples.form.placeholder4'), {
+      target: {
+        value: 'no description needed here'
       }
-    );
-    component.click(component.getByLabelText('anms.examples.form.text1'));
-    component.click(component.getByText('anms.examples.form.send'));
+    });
+    component.click(component.getByLabelText('aw.examples.form.text1'));
+    component.click(component.getByText('aw.examples.form.send'));
     const { type, payload } = new ActionFormUpdate({
       form: {
         autosave: false,

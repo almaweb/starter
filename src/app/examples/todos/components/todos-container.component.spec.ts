@@ -25,7 +25,7 @@ describe('TodosComponent', () => {
   let dispatchSpy: jasmine.Spy;
 
   beforeEach(async () => {
-    component = await createComponent('<anms-todos></anms-todos>', {
+    component = await createComponent('<aw-todos></aw-todos>', {
       imports: [TestingModule],
       declarations: [TodosContainerComponent],
       providers: [NotificationService],
@@ -81,20 +81,17 @@ describe('TodosComponent', () => {
     component.fixture.detectChanges();
     dispatchSpy.calls.reset();
 
-    component.keyUp(
-      component.getByPlaceholderText('anms.examples.todos.input'),
-      {
-        target: {
-          value: 'poke Tomas'
-        }
+    component.keyUp(component.getByPlaceholderText('aw.examples.todos.input'), {
+      target: {
+        value: 'poke Tomas'
       }
-    );
+    });
 
     component.click(component.getByLabelText('add todo'));
 
     expect(
       (component.getByPlaceholderText(
-        'anms.examples.todos.input'
+        'aw.examples.todos.input'
       ) as HTMLInputElement).value
     ).toBe('');
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
@@ -158,14 +155,11 @@ describe('TodosComponent', () => {
     store.setState(createState({ items: [], filter: 'ALL' }));
     component.fixture.detectChanges();
 
-    component.keyUp(
-      component.getByPlaceholderText('anms.examples.todos.input'),
-      {
-        target: {
-          value: 'add'
-        }
+    component.keyUp(component.getByPlaceholderText('aw.examples.todos.input'), {
+      target: {
+        value: 'add'
       }
-    );
+    });
 
     expect(
       (component.getByLabelText('add todo') as HTMLInputElement).disabled
@@ -176,31 +170,25 @@ describe('TodosComponent', () => {
     store.setState(createState({ items: [], filter: 'ALL' }));
     component.fixture.detectChanges();
 
-    component.keyUp(
-      component.getByPlaceholderText('anms.examples.todos.input'),
-      {
-        target: {
-          value: 'hellooooo'
-        }
+    component.keyUp(component.getByPlaceholderText('aw.examples.todos.input'), {
+      target: {
+        value: 'hellooooo'
       }
-    );
+    });
 
     expect(
       (component.getByPlaceholderText(
-        'anms.examples.todos.input'
+        'aw.examples.todos.input'
       ) as HTMLInputElement).value
     ).toBeTruthy();
 
-    component.keyUp(
-      component.getByPlaceholderText('anms.examples.todos.input'),
-      {
-        key: 'Esc'
-      }
-    );
+    component.keyUp(component.getByPlaceholderText('aw.examples.todos.input'), {
+      key: 'Esc'
+    });
 
     expect(
       (component.getByPlaceholderText(
-        'anms.examples.todos.input'
+        'aw.examples.todos.input'
       ) as HTMLInputElement).value
     ).toBeFalsy();
   });
