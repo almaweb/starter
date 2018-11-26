@@ -16,6 +16,9 @@
 
       .link {
         color: mat-color($primary, default-contrast);
+        &.active {
+          color: mat-color($accent);
+        }
       }
     }
 

@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthGuardService } from '@app/core';
+
+//import { UsersComponent } from './users/users.component';
 import { AboutComponent } from './about/about.component';
 import { FeaturesComponent } from './features/features.component';
 
 const routes: Routes = [
+  // {
+  //     path: 'users',
+  //     component: UsersComponent,
+  //     data: { title: 'aw.menu.users' }
+  // },
   {
     path: 'about',
     component: AboutComponent,
@@ -21,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class StaticRoutingModule {}
+export class AwRoutingModule {}
