@@ -1,5 +1,5 @@
 $aw-primary: mat-palette($mat-indigo, 800, 300, 900);
-$aw-accent: mat-palette($mat-light-blue);
+$aw-accent: mat-palette($mat-light-blue, 800, 300, 900);
 $aw-warn: mat-palette($mat-pink, 600);
 
 $aw-theme: mat-light-theme($aw-primary, $aw-accent, $aw-warn);

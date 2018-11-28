@@ -10,7 +10,16 @@ export enum SettingsActionTypes {
   CHANGE_ANIMATIONS_PAGE = '[Settings] Change Animations Page',
   CHANGE_ANIMATIONS_PAGE_DISABLED = '[Settings] Change Animations Page Disabled',
   CHANGE_ANIMATIONS_ELEMENTS = '[Settings] Change Animations Elements',
-  CHANGE_HOUR = '[Settings] Change Hours'
+  CHANGE_HOUR = '[Settings] Change Hours',
+
+  // COSTUM
+  IS_VISIBLE_HEADER_PAGE = '[Settings] is visible Header page'
+}
+
+export class ActionPageHeaderVisibilityAndTitle implements Action {
+  readonly type = SettingsActionTypes.IS_VISIBLE_HEADER_PAGE;
+
+  constructor(readonly payload: { isVisible: boolean; title: string }) {}
 }
 
 export class ActionSettingsChangeLanguage implements Action {
@@ -69,4 +78,5 @@ export type SettingsActions =
   | ActionSettingsChangeAnimationsElements
   | ActionSettingsChangeAutoNightMode
   | ActionSettingsChangeStickyHeader
-  | ActionSettingsChangeHour;
+  | ActionSettingsChangeHour
+  | ActionPageHeaderVisibilityAndTitle;

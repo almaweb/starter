@@ -10,7 +10,9 @@ export const initialState: SettingsState = {
   pageAnimations: true,
   pageAnimationsDisabled: false,
   elementsAnimations: true,
-  hour: 0
+  hour: 0,
+  isVisible: false,
+  title: null
 };
 
 export function settingsReducer(
@@ -25,6 +27,7 @@ export function settingsReducer(
     case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE:
     case SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS:
     case SettingsActionTypes.CHANGE_HOUR:
+    case SettingsActionTypes.IS_VISIBLE_HEADER_PAGE:
       return { ...state, ...action.payload };
 
     case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED:

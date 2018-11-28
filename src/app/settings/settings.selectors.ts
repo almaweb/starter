@@ -11,6 +11,11 @@ export const selectSettings = createSelector(
   (state: SettingsState) => state
 );
 
+export const selectSettingsPageHeader = createSelector(
+  selectSettings,
+  (state: SettingsState) => state.isVisible
+);
+
 export const selectSettingsStickyHeader = createSelector(
   selectSettings,
   (state: SettingsState) => state.stickyHeader

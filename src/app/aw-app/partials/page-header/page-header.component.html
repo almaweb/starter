@@ -1,3 +1,5 @@
-<div>
-    <mat-card class="aw-card">Simple card</mat-card>
+<div *ngIf="(pageHeader$ | async)">
+    <mat-card class="aw-card" [class.mat-elevation-z0]="!hasElevation">
+        static 
+    </mat-card>
 </div>

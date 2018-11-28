@@ -1,6 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+import { Store } from '@ngrx/store';
+import { State } from '../awApp.state';
+import { ActionPageHeaderVisibilityAndTitle } from '@app/settings/settings.actions';
 
 @Component({
   selector: 'aw-about',
@@ -12,7 +15,13 @@ export class AboutComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   releaseButler = require('../../../assets/release-butler.png');
 
-  constructor() {}
+  constructor(private store: Store<State>) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const headerPage = {
+      isVisible: false,
+      title: 'About'
+    };
+    this.store.dispatch(new ActionPageHeaderVisibilityAndTitle(headerPage));
+  }
 }

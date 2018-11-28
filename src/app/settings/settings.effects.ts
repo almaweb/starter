@@ -33,7 +33,7 @@ import { State } from './settings.model';
 
 export const SETTINGS_KEY = 'SETTINGS';
 
-const INIT = of('aw-init-effect-trigger');
+const INIT = of('anms-init-effect-trigger');
 
 @Injectable()
 export class SettingsEffects {
@@ -64,7 +64,8 @@ export class SettingsEffects {
       SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE,
       SettingsActionTypes.CHANGE_LANGUAGE,
       SettingsActionTypes.CHANGE_STICKY_HEADER,
-      SettingsActionTypes.CHANGE_THEME
+      SettingsActionTypes.CHANGE_THEME,
+      SettingsActionTypes.IS_VISIBLE_HEADER_PAGE
     ),
     withLatestFrom(this.store.pipe(select(selectSettingsState))),
     tap(([action, settings]) =>
