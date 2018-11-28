@@ -22,7 +22,6 @@ export class MockStore<T> extends Store<T> {
     reducerManager: ReducerManager
   ) {
     super(state$, actionsObserver, reducerManager);
-    this.source = this.stateSubject.asObservable();
   }
 
   setState(nextState: T) {
