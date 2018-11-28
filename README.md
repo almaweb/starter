@@ -1,1 +1,1 @@
-This is a test project based on ttps://github.com/tomastrajan/at-consulting
+This is a base project for At Consulting
