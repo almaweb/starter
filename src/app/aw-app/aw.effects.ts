@@ -10,7 +10,7 @@ import {
 } from 'rxjs/operators';
 
 import { LocalStorageService } from '@app/core';
-import { State } from './awApp.state';
+//  import { State } from './awApp.state';
 
 export const PAGE_HEADER_KEY = 'AW';
 
@@ -18,7 +18,7 @@ export const PAGE_HEADER_KEY = 'AW';
 export class AwEffects {
   constructor(
     private actions$: Actions<Action>,
-    private store: Store<State>,
+    // private store: Store<State>,
     private localStorageService: LocalStorageService
   ) {}
 

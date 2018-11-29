@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     const headerPage = {
       isVisible: true,
-      title: 'users'
+      title: 'aw.menu.users'
     };
     this.store.dispatch(new ActionPageHeaderVisibilityAndTitle(headerPage));
   }

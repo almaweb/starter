@@ -13,7 +13,7 @@ export const selectSettings = createSelector(
 
 export const selectSettingsPageHeader = createSelector(
   selectSettings,
-  (state: SettingsState) => state.isVisible
+  (state: SettingsState) => state.elementsHeaderPage
 );
 
 export const selectSettingsStickyHeader = createSelector(

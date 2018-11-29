@@ -1,5 +1,10 @@
-<div *ngIf="(pageHeader$ | async)">
+<div *ngIf="(pageHeader$ | async) && isvisibleHeader">
     <mat-card class="aw-card" [class.mat-elevation-z0]="!hasElevation">
-        static 
+        {{ titleHeader | translate }} 
     </mat-card>
 </div>
+<!-- <div *ngIf="pageHeaderA$ | async as ph">
+        <mat-card class="aw-card" [class.mat-elevation-z0]="!hasElevation">
+            {{ ph  | translate }}
+        </mat-card>
+    </div> -->

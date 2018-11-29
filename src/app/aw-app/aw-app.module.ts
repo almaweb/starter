@@ -8,7 +8,7 @@ import { FeaturesComponent } from './features/features.component';
 import { AwRoutingModule } from './aw-routing.module';
 import { PageHeaderComponent } from './partials/page-header/page-header.component';
 import { UsersComponent } from './users/users.component';
-import { FEATURE_AW_NAME, reducers } from './awApp.state';
+// import { FEATURE_AW_NAME, reducers } from './awApp.state';
 import { EffectsModule } from '@ngrx/effects';
 import { AwEffects } from './aw.effects';
 

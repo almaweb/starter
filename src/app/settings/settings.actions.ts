@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 
 import { Language } from './settings.model';
+import { HeaderPage } from '@app/aw-app/aw.models';
 
 export enum SettingsActionTypes {
   CHANGE_LANGUAGE = '[Settings] Change Language',
@@ -19,7 +20,7 @@ export enum SettingsActionTypes {
 export class ActionPageHeaderVisibilityAndTitle implements Action {
   readonly type = SettingsActionTypes.IS_VISIBLE_HEADER_PAGE;
 
-  constructor(readonly payload: { isVisible: boolean; title: string }) {}
+  constructor(readonly payload: HeaderPage) {}
 }
 
 export class ActionSettingsChangeLanguage implements Action {

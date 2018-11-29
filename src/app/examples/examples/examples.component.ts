@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { routeAnimations, selectAuth } from '@app/core';
-import { State as BaseSettingsState } from '@app/settings';
+import {
+  State as BaseSettingsState,
+  ActionPageHeaderVisibilityAndTitle
+} from '@app/settings';
 
 import { State as BaseExamplesState } from '../examples.state';
 
@@ -37,5 +40,10 @@ export class ExamplesComponent implements OnInit {
       select(selectAuth),
       map(auth => auth.isAuthenticated)
     );
+    const headerPage = {
+      isVisible: true,
+      title: 'aw.menu.examples'
+    };
+    this.store.dispatch(new ActionPageHeaderVisibilityAndTitle(headerPage));
   }
 }

@@ -1,5 +1,6 @@
 import { SettingsState, NIGHT_MODE_THEME } from './settings.model';
 import { SettingsActions, SettingsActionTypes } from './settings.actions';
+import { HeaderPage } from '@app/aw-app/aw.models';
 
 export const initialState: SettingsState = {
   language: 'en',
@@ -11,8 +12,10 @@ export const initialState: SettingsState = {
   pageAnimationsDisabled: false,
   elementsAnimations: true,
   hour: 0,
-  isVisible: false,
-  title: null
+  elementsHeaderPage: {
+    isVisible: false,
+    title: null
+  }
 };
 
 export function settingsReducer(
@@ -27,8 +30,13 @@ export function settingsReducer(
     case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE:
     case SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS:
     case SettingsActionTypes.CHANGE_HOUR:
-    case SettingsActionTypes.IS_VISIBLE_HEADER_PAGE:
       return { ...state, ...action.payload };
+
+    case SettingsActionTypes.IS_VISIBLE_HEADER_PAGE:
+      return {
+        ...state,
+        elementsHeaderPage: action.payload
+      };
 
     case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED:
       return {

@@ -1,4 +1,5 @@
 import { AppState } from '@app/core';
+import { HeaderPage } from '@app/aw-app/aw.models';
 
 export const NIGHT_MODE_THEME = 'BLACK-THEME';
 
@@ -14,8 +15,7 @@ export interface SettingsState {
   pageAnimationsDisabled: boolean;
   elementsAnimations: boolean;
   hour: number;
-  isVisible: boolean;
-  title: string;
+  elementsHeaderPage: HeaderPage;
 }
 
 export interface State extends AppState {
