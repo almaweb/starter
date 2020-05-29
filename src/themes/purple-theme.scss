@@ -1,9 +1,0 @@
-$aw-purple-primary: mat-palette($mat-deep-purple);
-$aw-purple-accent: mat-palette($mat-deep-purple, 300);
-$aw-purple-warn: mat-palette($mat-red, 500);
-
-$aw-purple-theme: mat-light-theme(
-  $aw-purple-primary,
-  $aw-purple-accent,
-  $aw-purple-warn
-);
