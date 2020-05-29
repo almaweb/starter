@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+
+# docker exec -it nameContainer ng new projectName --directory=.
+# docker-compose up
+# docker-compose exec nameContainer commandToRun
+# Example: -
+# docker-compose exec nameContainer ng generate component xyz # to create a component in the project
+
+  rds:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 9001:80
+    volumes:
+      - /usr/src/app/node_modules # a noter que /usr/src/app/ ce la meme que WORKDIR in Dockerfile
+      - .:/usr/src/app
